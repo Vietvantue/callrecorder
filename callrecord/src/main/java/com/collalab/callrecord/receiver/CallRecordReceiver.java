@@ -1,11 +1,11 @@
-package com.aykuttasil.callrecord.receiver;
+package com.collalab.callrecord.receiver;
 
 import android.content.Context;
 import android.media.MediaRecorder;
 import android.util.Log;
 
-import com.aykuttasil.callrecord.CallRecord;
-import com.aykuttasil.callrecord.helper.PrefsHelper;
+import com.collalab.callrecord.CallRecord;
+import com.collalab.callrecord.helper.PrefsHelper;
 
 import java.io.File;
 import java.io.IOException;

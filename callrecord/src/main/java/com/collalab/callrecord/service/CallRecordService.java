@@ -1,4 +1,4 @@
-package com.aykuttasil.callrecord.service;
+package com.collalab.callrecord.service;
 
 import android.app.Service;
 import android.content.Intent;
@@ -6,8 +6,8 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
-import com.aykuttasil.callrecord.CallRecord;
-import com.aykuttasil.callrecord.helper.PrefsHelper;
+import com.collalab.callrecord.CallRecord;
+import com.collalab.callrecord.helper.PrefsHelper;
 
 /**
  * Created by aykutasil on 19.10.2016.

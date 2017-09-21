@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.aykuttasil.callrecord">
+    package="com.collalab.callrecord">
 
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -14,7 +14,7 @@
 
 
         <service
-            android:name=".service.CallRecordService"
+            android:name="com.collalab.callrecord.service.CallRecordService"
             android:exported="true" />
 
         <!--

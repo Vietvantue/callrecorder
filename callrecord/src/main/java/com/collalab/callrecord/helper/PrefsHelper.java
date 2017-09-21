@@ -1,4 +1,4 @@
-package com.aykuttasil.callrecord.helper;
+package com.collalab.callrecord.helper;
 
 import android.content.Context;
 import android.content.SharedPreferences;
