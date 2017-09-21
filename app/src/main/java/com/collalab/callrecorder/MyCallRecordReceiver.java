@@ -1,9 +1,9 @@
-package com.aykuttasil.callrecorder;
+package com.collalab.callrecorder;
 
 import android.content.Context;
 
-import com.aykuttasil.callrecord.CallRecord;
-import com.aykuttasil.callrecord.receiver.CallRecordReceiver;
+import com.collalab.callrecord.CallRecord;
+import com.collalab.callrecord.receiver.CallRecordReceiver;
 
 import java.util.Date;
 

@@ -4,7 +4,7 @@ android {
     compileSdkVersion project.sdk
     buildToolsVersion project.buildTools
     defaultConfig {
-        applicationId "com.aykuttasil.callrecorder"
+        applicationId "com.collalab.callrecorder"
         minSdkVersion project.minSdk
         targetSdkVersion project.sdk
         versionCode 1
@@ -21,10 +21,10 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
     compile "com.android.support:appcompat-v7:$supportVersion"
-    testCompile 'junit:junit:4.12'
+    compile "com.android.support:design:$supportVersion"
     compile project(':callrecord')
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }

@@ -1,11 +1,18 @@
-package com.aykuttasil.callrecorder;
+package com.collalab.callrecorder;
 
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 
-import com.aykuttasil.callrecord.CallRecord;
+import com.collalab.callrecord.CallRecord;
+import com.collalab.callrecorder.adapter.MainViewPagerAdapter;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,11 +20,19 @@ public class MainActivity extends AppCompatActivity {
 
     CallRecord callRecord;
 
+    @BindView(R.id.viewpager)
+    ViewPager mViewPager;
+    @BindView(R.id.toolbar)
+    Toolbar mToolbar;
+    MainViewPagerAdapter mViewPagerAdapter;
+    @BindView(R.id.tabs)
+    TabLayout mTabLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        ButterKnife.bind(this);
         //callRecord = CallRecord.init(this);
 
         callRecord = new CallRecord.Builder(this)
@@ -25,6 +40,14 @@ public class MainActivity extends AppCompatActivity {
                 .setRecordDirName("CallRecorderDir")
                 .setShowSeed(true)
                 .build();
+
+        mViewPagerAdapter = new MainViewPagerAdapter(getSupportFragmentManager());
+
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+
+        setViewPager();
+
 
         //callRecord.changeReceiver(new MyCallRecordReceiver(callRecord));
 
@@ -45,6 +68,12 @@ public class MainActivity extends AppCompatActivity {
         callRecord.startCallRecordService();
         */
 
+    }
+
+    private void setViewPager() {
+
+        mViewPager.setAdapter(mViewPagerAdapter);
+        mTabLayout.setupWithViewPager(mViewPager);
     }
 
     public void StartCallRecordClick(View view) {
